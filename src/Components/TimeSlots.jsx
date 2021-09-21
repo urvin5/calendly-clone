@@ -19,18 +19,21 @@ export function TimeSlots() {
     history.push("/details");
   };
   return (
-    <ButtonGroup vertical className="d-grid gap-2 m-5">
-      {timeSlots.map((time) => (
-        <Button
-          variant={`outline-${time.isSelected ? "danger" : "primary"}`}
-          key={time.time}
-          size="lg"
-          block
-          onClick={() => handleSelectTime(time.time)}
-        >
-          {time.time}
-        </Button>
-      ))}
-    </ButtonGroup>
+    <div>
+      <h3>Please select your suitable time slot</h3>
+      <ButtonGroup vertical className="d-grid gap-2 m-5">
+        {timeSlots.map((time) => (
+          <Button
+            variant={`outline-${time.isSelected ? "danger" : "primary"}`}
+            key={time.time}
+            size="lg"
+            block
+            onClick={() => handleSelectTime(time.time)}
+          >
+            {time.time}
+          </Button>
+        ))}
+      </ButtonGroup>
+    </div>
   );
 }
